@@ -1,0 +1,298 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --orange-100: hsl(31, 85%, 70%);
+  --orange-400: hsl(31, 77%, 52%);
+  --orange-500: hsl(31, 77%, 46%);
+  --orange-800: hsl(25, 74%, 57%);
+  --orange-900: hsl(25, 80%, 50%);
+  --cyan-400: hsl(184, 100%, 22%);
+  --cyan-500: hsl(184, 100%, 15%);
+  --cyan-800: hsl(179, 100%, 13%);
+  --cyan-900: hsl(179, 100%, 7%);
+
+  --gray-50: hsl(0, 0%, 95%);
+  --white: 0, 0%, 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  place-items: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  position: relative;
+  background-color:var(--orange-100) ;
+  padding-block: 2rem;
+  gap: 2rem;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(../assets/images/joshua-koblin.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  mix-blend-mode: multiply;
+  opacity: 0.25;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 700;
+}
+
+
+
+.wrapper {
+  max-width: 65rem;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+
+
+.card {
+  padding-block: 3.5rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5em;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+ .card-icon {
+  cursor: pointer;
+  padding: .15em ;
+}
+
+
+.card-title {
+  font-size: calc(2.5vw + 1rem);
+  color: var(--gray-50);       
+    background-image: linear-gradient(55deg, var(--orange-100),var(--gray-50));
+    filter: drop-shadow(0 20px 30px hsla(293, 83%, 33%, 0.141));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    box-decoration-break: clone;
+}
+
+.card-p {
+  line-height: 1.6;
+  max-width: 60ch;
+  font-size: 1rem;
+  color: hsl(var(--white), 0.75);
+  background-image: linear-gradient(55deg, var(--orange-100),var(--gray-50));
+  filter: drop-shadow(0 20px 30px hsla(293, 83%, 33%, 0.141));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    box-decoration-break: clone;
+}
+
+.card-btn {
+  outline: 0;
+  border: 2px solid transparent;
+  background-color: var(--gray-50);
+  padding: 0.85rem 2.15rem;
+  border-radius: 5rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 400ms ease-in;
+
+}
+
+.Sedans-btn {
+  color: var(--orange-400);
+  box-shadow: inset 0 0 0 var(--orange-400);
+}
+
+.Sedans-btn:hover {
+  box-shadow: inset 200px 0 0 var(--orange-400);
+  color: var(--gray-50);
+
+}
+
+.suv-btn {
+  color: var(--cyan-400);
+  box-shadow: inset 0 0 0 var(--cyan-400);
+}
+
+
+.suv-btn:hover {
+  box-shadow: inset 200px 0 0 var(--cyan-400);
+  color: var(--gray-50);
+
+}
+
+
+.luxury-btn {
+  color: var(--cyan-800);
+  box-shadow: inset 0 0 0 var(--cyan-800);
+}
+
+
+.luxury-btn:hover {
+  box-shadow: inset 200px 0 0 var(--cyan-800);
+  color: var(--gray-50);
+
+}
+
+
+.Sedans {
+  background: var(--orange-400); 
+  background: linear-gradient(
+    to right,
+    var(--orange-900),
+    var(--orange-800)
+  ); 
+  position: relative;
+  z-index: 1;
+  transition: all 500ms ease-in-out;
+
+}
+
+
+.suv {
+  background: var(--cyan-400);
+  background: linear-gradient(to right, var(--cyan-400),var(--cyan-500));
+  position: relative;
+  z-index: 1;
+  transition: all 500ms ease-in-out;
+
+}
+
+.luxury {
+  background: var(--cyan-800);
+  background: linear-gradient(to right, var(--cyan-800),var(--cyan-900));
+  position: relative;
+  z-index: 1;
+  transition: all 500ms ease-in-out;
+
+}
+
+
+.Sedans::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url(../assets/images/oli-woodmanI-unsplash.jpg);
+  opacity: 0.4;
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: multiply;
+}
+
+
+.suv::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url(../assets/images/kirk-thornton-unsplash.jpg);
+  opacity: 0.4;
+  background-position: bottom;
+  background-size: cover;
+  mix-blend-mode: multiply;
+}
+
+
+.luxury::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url(../assets/images/matt-atherton-unsplash.jpg);
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  background-size: cover;
+  mix-blend-mode: multiply;
+  background-position: bottom;
+}
+
+
+footer {
+  z-index: 2;
+}
+
+
+[data-hovered="true"] {
+  transform: scale(0.75) rotate(360deg);
+}
+
+
+
+
+
+@media (max-width:45.01rem) {
+  
+  .wrapper {
+    max-width: 40rem;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    border-radius: 9px;
+    overflow: hidden;
+    min-height: auto;
+  }
+  
+  }
+
+
+  @media (45rem <= width <= 70rem) {
+  
+    .wrapper {
+      max-width: 65rem;
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: 1fr;
+      align-items: center;
+      border-radius: 9px;
+      overflow: hidden;
+      min-height: auto;
+
+    }
+      .Sedans {
+        grid-column: 1 / -1;
+      }    
+    }
+  
+.attribution {
+  color: var(--cyan-900);
+  background-color: hsl(var(--white), 0.75);
+  padding: .5em 1.5em;
+  border-radius: 1rem;
+  opacity: 0.25;
+  transition: all 200ms ease-in-out;
+}
+
+.attribution:is(:hover, :focus-visible) {
+  opacity: 1;
+}
+
+.attribution a {
+  color: var(--orange-900);
+}
